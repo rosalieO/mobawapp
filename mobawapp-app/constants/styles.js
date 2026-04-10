@@ -38,5 +38,11 @@ export const styles = StyleSheet.create({
         color: '#1a1a1a',
         fontWeight: '400',
         textTransform: 'uppercase'
+    },
+    error: {
+        color: '#f366',
+        fontWeight: 'bold',
+        fontSize: 16,
+        fontFamily: 'mono'
     }
 });
