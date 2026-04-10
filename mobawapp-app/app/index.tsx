@@ -1,17 +1,17 @@
 import { Link } from 'expo-router';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { ScrollView, Image, Text, TouchableOpacity } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { styles } from '../constants/styles';
 
 const anomalies = [
-    { id: 'anomaly-a', name: 'Some Name', image: require('../assets/anomaly-a.png')},
-    { id: 'anomaly-b', name: 'Some Other Name', image: require('../assets/anomaly-b.png')},
-    { id: 'anomaly-c', name: 'Some Weird Name', image: require('../assets/anomaly-c.png')}
+    { id: 'anomaly-a', name: 'Some Name', image: require('../assets/anomaly-a.jpg')},
+    { id: 'anomaly-b', name: 'Some Other Name', image: require('../assets/anomaly-b.jpg')},
+    { id: 'anomaly-c', name: 'Some Weird Name', image: require('../assets/anomaly-c.jpg')}
 ];
 
 export default function Home() {
     return (
-        <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.headline}>
                 Home
             </Text>
@@ -31,6 +31,6 @@ export default function Home() {
                   </TouchableOpacity>
               </Link>
             ))}
-        </View>
+        </ScrollView>
     )
 }
