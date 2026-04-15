@@ -27,7 +27,8 @@ export default function TabsLayout() {
                 options={{
                     title: 'New',
                     tabBarIcon: ({ color } : any) =>
-                        <MaterialIcons size={28} name="add-circle-outline" color={color} />
+                        <MaterialIcons size={28} name="add-circle-outline" color={color} />,
+                    headerShown: false,
                 }}
             />
             <Tabs.Screen

@@ -13,6 +13,10 @@ export const Styles = StyleSheet.create({
         backgroundColor: 'black',
         padding: 20,
     },
+    inputcontainer: {
+        width: '100%',
+        marginBottom: 20
+    },
     touchable: {
         padding: 15,
         backgroundColor: '#f0f0f0',
@@ -29,8 +33,7 @@ export const Styles = StyleSheet.create({
     subheadline: {
         fontSize: 12,
         fontFamily: 'System',
-        color: 'pink',
-        marginTop: 8,
+        color: '#cacaca',
         textTransform: 'uppercase',
     },
     anomalyname: {
@@ -40,17 +43,30 @@ export const Styles = StyleSheet.create({
         fontWeight: '600',
     },
     caption: {
-        fontSize: 8,
+        fontSize: 12,
         fontFamily: 'System',
-        color: '#cacaca',
+        color: 'pink',
         fontWeight: '400',
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
+        marginTop: 8,
     },
     text: {
         fontSize: 12,
         fontFamily: 'System',
         color: '#cacaca',
         fontWeight: '400',
+    },
+    textInput: {
+        fontSize: 12,
+        fontFamily: 'System',
+        color: '#cacaca',
+        backgroundColor: '#333333', 
+        borderRadius: 8,
+        paddingHorizontal: 15,
+        paddingVertical: 10,
+        borderWidth: 1,
+        borderColor: '#444444',
+        marginTop: 10,
     },
     error: {
         color: '#f366',
