@@ -1,17 +1,31 @@
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { Styles } from '../../constants/styles'; 
 import React, { useState } from 'react';
 
-interface NewAnomaly {
+interface Anomaly {
   name: string;
   description: string;
   image: string;
 }
 
 export default function New() {
-  const [newAnomalyName, setNewAnomalyName] = useState<string>('');
-  const [newAnomalyDescription, setNewAnomalyDescription] = useState<string>('');
-  const [newAnomalyImage, setNewAnomalyImage] = useState<string>('');
+  const [anomalyName, setAnomalyName] = useState<string>('');
+  const [anomalyDescription, setAnomalyDescription] = useState<string>('');
+  const [anomalyImage, setAnomalyImage] = useState<string>('');
+  const [anomalies, setAnomalies] = useState<Anomaly[]>([]);
+
+  const addAnomaly = (): void => {
+    if (anomalyName.trim() !== '' && anomalyDescription.trim() !== '') {
+      const newAnomaly: Anomaly = {
+        name: anomalyName,
+        description: anomalyDescription,
+        image: anomalyImage
+      };
+      setAnomalies([...anomalies, newAnomaly]);
+      setAnomalyName('');
+      setAnomalyDescription('');
+    }
+  };
 
   return (
     <View style={Styles.container}>
@@ -21,8 +35,8 @@ export default function New() {
         <Text style={Styles.subheadline}>Name</Text>
         <TextInput
           style={Styles.textInput}
-          value={newAnomalyName}
-          onChangeText={setNewAnomalyName}
+          value={anomalyName}
+          onChangeText={setAnomalyName}
           placeholder="Give your anomaly a name..."
           placeholderTextColor="#666666"
         />
@@ -31,8 +45,8 @@ export default function New() {
         <Text style={Styles.subheadline}>Description</Text>
         <TextInput
           style={[Styles.textInput, { height: 150 }]}
-          value={newAnomalyDescription}
-          onChangeText={setNewAnomalyDescription}
+          value={anomalyDescription}
+          onChangeText={setAnomalyDescription}
           placeholder="Describe your new anomaly..."
           placeholderTextColor="#666666"
           multiline={true}         
@@ -43,6 +57,11 @@ export default function New() {
       <View style={Styles.inputcontainer}>
         <Text style={Styles.subheadline}>Image</Text>
       </View>
+      <TouchableOpacity 
+        style={Styles.touchable} 
+        onPress={() => console.log('Anomaly saved!')}>
+        <Text style={Styles.touchabletext}>Save Anomaly</Text>
+      </TouchableOpacity>
     </View>
   );
 }
