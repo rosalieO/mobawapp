@@ -1,7 +1,6 @@
 import { Link } from 'expo-router';
 import { ScrollView, Image, Text, TouchableOpacity } from 'react-native';
-import { StyleSheet } from 'react-native';
-import { styles } from '../constants/styles';
+import { Styles } from '../constants/styles';
 
 const anomalies = [
     { id: 'anomaly-a', name: 'Some Name', image: require('../assets/anomaly-a.jpg')},
@@ -11,21 +10,21 @@ const anomalies = [
 
 export default function Home() {
     return (
-        <ScrollView contentContainerStyle={styles.container}>
-            <Text style={styles.headline}>
+        <ScrollView contentContainerStyle={Styles.container}>
+            <Text style={Styles.headline}>
                 Home
             </Text>
-            <Text style={styles.subheadline}>
+            <Text style={Styles.subheadline}>
                 Eine kurze Beschreibung der App.
             </Text>
             {anomalies.map(anomalies => (
               <Link key={anomalies.id} href={`/anomaly_monitor/${anomalies.id}`} asChild>
-                  <TouchableOpacity style={styles.touchable}>
+                  <TouchableOpacity style={Styles.touchable}>
                       <Image
                         source={anomalies.image}
                         resizeMode="contain"
                       />
-                      <Text style={styles.anomalyname}>
+                      <Text style={Styles.anomalyname}>
                           {anomalies.name}
                       </Text>
                   </TouchableOpacity>

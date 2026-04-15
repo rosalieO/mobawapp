@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native';
-import { styles } from '../../constants/styles'; 
+import { Styles } from '../../constants/styles'; 
 
 export default function MyAnomalies() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.headline}>My Anomalies</Text>
+    <View style={Styles.container}>
+      <Text style={Styles.headline}>My Anomalies</Text>
     </View>
   );
 }

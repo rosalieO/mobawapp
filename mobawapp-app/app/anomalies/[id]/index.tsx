@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native';
-import { styles } from '../../../constants/styles';
+import { Styles } from '../../../constants/styles';
 import { AnomalyProvider, useAnomalies } from '../../../context/anomaly_context';
 import { useLocalSearchParams } from 'expo-router';
 
@@ -8,10 +8,10 @@ export default function AnomalyDetailPage() {
   const { getAnomalyById } = useAnomalies();
   const anomaly = getAnomalyById(id as string);
 
-  if (!anomaly) return <Text style={styles.error}>Anomaly not found °~°</Text>;
+  if (!anomaly) return <Text style={Styles.error}>Anomaly not found °~°</Text>;
   return (
-    <View style={styles.container}>
-      <Text style={styles.headline}>Anomaly Name</Text>
+    <View style={Styles.container}>
+      <Text style={Styles.headline}>Anomaly Name</Text>
     </View>
   );
 }

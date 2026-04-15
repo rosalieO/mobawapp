@@ -1,6 +1,13 @@
 import { StyleSheet } from 'react-native';
 
-export const styles = StyleSheet.create({
+export const Colors = {
+  active: 'black',
+  inactive: 'grey',
+  activeBackground: 'pink',
+  inactiveBackground: 'black',
+};
+
+export const Styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
@@ -44,5 +51,5 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
         fontFamily: 'mono'
-    }
+    },
 });

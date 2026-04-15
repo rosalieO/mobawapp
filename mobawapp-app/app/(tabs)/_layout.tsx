@@ -1,16 +1,24 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
+import { Styles, Colors } from '../../constants/styles'; 
 
 export default function TabsLayout() {
     return (
-        <Tabs>
+        <Tabs
+          screenOptions={{
+          tabBarActiveTintColor: Colors.active,   
+          tabBarInactiveTintColor: Colors.inactive, 
+          tabBarActiveBackgroundColor: Colors.activeBackground,
+          tabBarInactiveBackgroundColor: Colors.inactiveBackground,
+        }}
+        >
             <Tabs.Screen
               name="index"
                 options={{
                     title: 'Home',
-                    tabBarIcon: ({ color } : any) =>
-                        <MaterialIcons size={28} name="article" color={color} />
+                    tabBarIcon: ({ color }) =>
+                        <MaterialIcons size={28} name="house" color={color}/>,
                 }}
             />
             <Tabs.Screen
@@ -18,7 +26,7 @@ export default function TabsLayout() {
                 options={{
                     title: 'New',
                     tabBarIcon: ({ color } : any) =>
-                        <MaterialIcons size={28} name="article" color={color} />
+                        <MaterialIcons size={28} name="add-circle-outline" color={color} />
                 }}
             />
             <Tabs.Screen
@@ -26,7 +34,7 @@ export default function TabsLayout() {
                 options={{
                     title: 'My Anomalies',
                     tabBarIcon: ({ color } : any) =>
-                        <MaterialIcons size={28} name="article" color={color} />
+                        <MaterialIcons size={28} name="list-alt" color={color} />
                 }}
             />
             <Tabs.Screen
@@ -34,7 +42,7 @@ export default function TabsLayout() {
                 options={{
                     title: 'Search',
                     tabBarIcon: ({ color } : any) =>
-                        <MaterialIcons size={28} name="article" color={color} />
+                        <MaterialIcons size={28} name="search" color={color} />
                 }}
             />
         </Tabs>
