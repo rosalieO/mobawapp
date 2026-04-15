@@ -10,7 +10,7 @@ export const Colors = {
 export const Styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: 'black',
         padding: 20,
     },
     touchable: {
@@ -23,28 +23,34 @@ export const Styles = StyleSheet.create({
         fontSize: 24,
         fontFamily: 'System',
         fontWeight: 'bold',
-        color: '#1a1a1a',
+        color: '#cacaca',
         marginBottom: 8,
     },
     subheadline: {
-        fontSize: 16,
+        fontSize: 12,
         fontFamily: 'System',
-        color: '#1a1a1a',
-        lineHeight: 22,
-        marginBottom: 20,
+        color: 'pink',
+        marginTop: 8,
+        textTransform: 'uppercase',
     },
     anomalyname: {
         fontSize: 16,
         fontFamily: 'System',
-        color: '#1a1a1a',
+        color: '#cacaca',
         fontWeight: '600',
     },
     caption: {
         fontSize: 8,
         fontFamily: 'System',
-        color: '#1a1a1a',
+        color: '#cacaca',
         fontWeight: '400',
         textTransform: 'uppercase'
+    },
+    text: {
+        fontSize: 12,
+        fontFamily: 'System',
+        color: '#cacaca',
+        fontWeight: '400',
     },
     error: {
         color: '#f366',
@@ -52,4 +58,10 @@ export const Styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: 'mono'
     },
+    image: {
+        width: '100%',
+        height: 250,
+        borderRadius: 5,
+        overflow: 'hidden'
+    }
 });

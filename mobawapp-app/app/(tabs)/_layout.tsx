@@ -19,6 +19,7 @@ export default function TabsLayout() {
                     title: 'Home',
                     tabBarIcon: ({ color }) =>
                         <MaterialIcons size={28} name="house" color={color}/>,
+                    headerShown: false,
                 }}
             />
             <Tabs.Screen
