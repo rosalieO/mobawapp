@@ -92,6 +92,7 @@ export const Styles = StyleSheet.create({
         fontFamily: 'System',
         color: 'black',
         fontWeight: 800,
+        textAlign: 'center'
     },
     error: {
         color: '#f366',
