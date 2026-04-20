@@ -1,38 +1,47 @@
-import { View, Text, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
+import { Text, TouchableOpacity, ScrollView } from 'react-native';
 import { Styles } from '../../constants/styles'; 
 import React, { useState } from 'react';
 import { CustomInput } from '../../components/custom_input';
 import { ImageSelector } from '../../components/image_selector';
+import { AnomalyProvider, useAnomalies } from '../../context/anomaly_context';
 
 interface Anomaly {
+  id: string;
   name: string;
   description: string;
   image: string | null;
 }
 
 export default function New() {
+  const { addAnomaly } = useAnomalies();
+
   const [anomalyName, setAnomalyName] = useState<string>('');
   const [anomalyDescription, setAnomalyDescription] = useState<string>('');
   const [anomalyImage, setAnomalyImage] = useState<string | null>(null);
-  const [anomalies, setAnomalies] = useState<Anomaly[]>([]);
 
-  const addAnomaly = (): void => {
+  const handleSavePress = (): void => {
     if (anomalyName.trim() !== '' && anomalyDescription.trim() !== '' && anomalyImage !== null) {
-      const newAnomaly: Anomaly = {
+      const newEntry: Anomaly = {
+        id: Date.now().toString(),
         name: anomalyName,
         description: anomalyDescription,
         image: anomalyImage
       };
-      setAnomalies([...anomalies, newAnomaly]);
+
+      addAnomaly(newEntry);
+
       setAnomalyName('');
       setAnomalyDescription('');
+      setAnomalyImage(null);
+
+      alert("Erfolgreich gespeichert!");
     }
   };
 
   const isFormValid = anomalyName.trim() !== '' && anomalyDescription.trim() !== '' && anomalyImage !== null;
 
   return (
-    <View style={Styles.container}>
+    <ScrollView style={Styles.container} contentContainerStyle={{ paddingBottom: 100 }}>
       <Text style={Styles.caption}>create a report</Text>
       <Text style={Styles.headline}>New Anomaly</Text>
       <CustomInput
@@ -56,11 +65,11 @@ export default function New() {
       />
       <TouchableOpacity 
         style={[Styles.touchable, {backgroundColor: isFormValid ? 'pink' : '#cacaca'}]} 
-        onPress={addAnomaly} 
+        onPress={handleSavePress} 
         disabled={!isFormValid}
       >
         <Text style={Styles.touchabletext}>Save Anomaly</Text>
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 }
