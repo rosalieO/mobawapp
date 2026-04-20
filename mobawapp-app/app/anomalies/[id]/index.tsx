@@ -1,7 +1,7 @@
 import { View, Text, Image } from 'react-native';
 import { Styles } from '../../../constants/styles';
 import { useAnomalies } from '../../../context/anomaly_context';
-import { useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams, Stack } from 'expo-router';
 
 export default function AnomalyDetailPage() {
   const { id } = useLocalSearchParams();
@@ -23,6 +23,7 @@ export default function AnomalyDetailPage() {
   if (!anomaly) return <Text style={Styles.error}>Anomaly not found °~°</Text>;
   return (
     <View style={Styles.container}>
+      <Stack.Screen options={{ headerShown: false }} />
       {imageSource ? (
         <Image 
           source={imageSource} 
