@@ -28,10 +28,10 @@ export function DateInput() {
               <Text style={Styles.subheadline}>From</Text>
   
               <TouchableOpacity
-                style={Styles.touchable}
+                style={Styles.datetouchable}
                 onPress={() => setShow('from')}
               >
-                  <Text style={Styles.touchabletext}>{fromDate.toLocaleDateString('en-EN')}</Text>
+                  <Text style={Styles.datetouchabletext}>{fromDate.toLocaleDateString('en-EN')}</Text>
               </TouchableOpacity>
   
               {show === 'from' && (
@@ -47,10 +47,10 @@ export function DateInput() {
               <Text style={Styles.subheadline}>To</Text>
   
               <TouchableOpacity
-                style={Styles.touchable}
+                style={Styles.datetouchable}
                 onPress={() => setShow('to')}
               >
-                  <Text style={Styles.touchabletext}>{toDate.toLocaleDateString('en-EN')}</Text>
+                  <Text style={Styles.datetouchabletext}>{toDate.toLocaleDateString('en-EN')}</Text>
               </TouchableOpacity>
   
               {show === 'to' && (

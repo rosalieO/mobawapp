@@ -3,7 +3,7 @@ import { Styles } from '../../constants/styles';
 import React, { useState } from 'react';
 import { CustomInput } from '../../components/custom_input';
 import { ImageSelector } from '../../components/image_selector';
-import { AnomalyProvider, useAnomalies } from '../../context/anomaly_context';
+import { useAnomalies } from '../../context/anomaly_context';
 
 interface Anomaly {
   id: string;

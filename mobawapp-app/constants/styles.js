@@ -46,6 +46,15 @@ export const Styles = StyleSheet.create({
         marginBottom: 10,
         textAlign: 'center',
     },
+    datetouchable: {
+        padding: 8,
+        backgroundColor: '#333333',
+        borderRadius: 8,
+        marginBottom: 10,
+        textAlign: 'center',
+        borderWidth: 1,
+        borderColor: '#444444',
+    },
     headline: {
         fontSize: 24,
         fontFamily: 'System',
@@ -101,6 +110,13 @@ export const Styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: 'System',
         color: 'black',
+        fontWeight: 800,
+        textAlign: 'center'
+    },
+    datetouchabletext: {
+        fontSize: 16,
+        fontFamily: 'System',
+        color: '#cacaca',
         fontWeight: 800,
         textAlign: 'center'
     },
