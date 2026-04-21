@@ -7,7 +7,7 @@ interface ApiResult {
   id: string;
   name: string;
   description: string;
-  image: string;
+  image: string | null;
 }
 
 interface SearchListProps {

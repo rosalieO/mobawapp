@@ -3,11 +3,12 @@ import { Styles } from '../../constants/styles';
 import { DateInput } from '../../components/date_input';
 import React, { useState } from 'react';
 import SearchList from '../../components/search_list';
+import { Anomaly } from '../../context/anomaly_context';
 
 export default function Search() {
   const [fromDate, setFromDate] = useState(new Date())
   const [toDate, setToDate] = useState(new Date())
-  const [results, setResults] = useState([]); 
+  const [results, setResults] = useState<Anomaly[]>([]); 
   const [loading, setLoading] = useState(false);
 
   const handleSearch = async () => {
@@ -21,21 +22,31 @@ export default function Search() {
   
     try {
       const response = await fetch(url);
-      const data = await response.json();
+      const data = await response.json(); 
   
-      const formattedData = data.map((item: any) => ({
-        id: item.date,           
-        name: item.title,      
-        description: item.explanation, 
-        image: item.url       
-      }));
+      if (!response.ok) {
+        console.log("NASA Detail-Fehler:", data);
+        alert("NASA sagt: " + (data.msg || data.error?.message || "Ungültige Anfrage"));
+        setLoading(false);
+        return;
+      }
   
-      setResults(formattedData); 
+      if (Array.isArray(data)) {
+        const formattedData = data.map((item: any) => ({
+          id: item.date,
+          name: item.title,
+          description: item.explanation,
+          image: item.url
+        }));
+        setResults(formattedData);
+      } else {
+        console.log("Kein Array erhalten:", data);
+        setResults([]); 
+      }
     } catch (error) {
-      console.error("API Error:", error);
-      alert("Fehler beim Abrufen der Daten!");
+      alert("Netzwerkfehler!");
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   };
 

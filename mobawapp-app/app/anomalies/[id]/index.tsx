@@ -20,7 +20,6 @@ export default function AnomalyDetailPage() {
   ? { uri: anomaly.image } 
   : anomaly.image;
 
-  if (!anomaly) return <Text style={Styles.error}>Anomaly not found °~°</Text>;
   return (
     <View style={Styles.container}>
       <Stack.Screen options={{ headerShown: false }} />
