@@ -19,8 +19,9 @@ export function SearchCard({ item }: SearchCardProps) {
             style={[Styles.searchimage, { borderTopLeftRadius: 8, borderBottomLeftRadius: 8 }]}
             resizeMode='cover'
           />
-          <View style={Styles.textcontainer}>
-            <Text style={Styles.anomalyname}>{item.name}</Text>
+          <View style={Styles.searchtextcontainer}>
+            <Text style={Styles.datetext}>{item.id}</Text>
+            <Text style={Styles.searchname}>{item.name}</Text>
             <Text style={Styles.fadedtext} numberOfLines={2}>
               {item.description}
             </Text>

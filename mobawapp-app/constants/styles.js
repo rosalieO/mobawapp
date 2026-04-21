@@ -39,18 +39,21 @@ export const Styles = StyleSheet.create({
     textcontainer: {
         padding: 10,
     },
-    searchcontainer: {
-        flexDirection: 'row', 
-        flexWrap: 'wrap',   
-        justifyContent: 'space-between', 
+    searchtextcontainer: {
+        width: 200,
+        height: '100%',
         padding: 10,
+    },
+    searchcontainer: {
+        flexDirection: 'row',  
         width: '100%',
-        maxheight: 200,
+        height: 100,
         marginBottom: 20,
         borderRadius: 8,
         backgroundColor: '#333333',
         borderWidth: 1,
         borderColor: '#444444',
+        overflow: 'hidden',
     },
     touchable: {
         padding: 15,
@@ -83,6 +86,12 @@ export const Styles = StyleSheet.create({
     },
     anomalyname: {
         fontSize: 16,
+        fontFamily: 'System',
+        color: '#cacaca',
+        fontWeight: '600',
+    },
+    searchname: {
+        fontSize: 14,
         fontFamily: 'System',
         color: '#cacaca',
         fontWeight: '600',
@@ -132,6 +141,13 @@ export const Styles = StyleSheet.create({
         color: '#cacaca',
         fontWeight: 800,
         textAlign: 'center'
+    },
+    datetext: {
+        fontSize: 12,
+        fontFamily: 'System',
+        color: '#8d8d8d',
+        fontWeight: '400',
+        textTransform: 'uppercase',
     },
     error: {
         color: '#f366',
