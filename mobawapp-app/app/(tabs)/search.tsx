@@ -16,8 +16,8 @@ export default function Search() {
     
     const start = fromDate.toISOString().split('T')[0];
     const end = toDate.toISOString().split('T')[0];
-    const API_KEY = process.env.NASA_API_KEY;
-    const BASE_URL = process.env.NASA_BASE_URL;
+    const API_KEY = process.env.EXPO_PUBLIC_NASA_API_KEY;
+    const BASE_URL = process.env.EXPO_PUBLIC_NASA_BASE_URL;
 
     const url = `${BASE_URL}?api_key=${API_KEY}&start_date=${start}&end_date=${end}`;
   
@@ -32,21 +32,16 @@ export default function Search() {
         return;
       }
   
-      if (Array.isArray(data)) {
-        const formattedData = data.map((item: any) => ({
-          id: item.date,
-          name: item.title,
-          description: item.explanation,
-          image: item.url
-        }));
-        setResults(formattedData);
-      } else {
-        console.log("Kein Array erhalten:", data);
-        setResults([]); 
-      }
-    } catch (error) {
-      alert("Netzwerkfehler!");
-    } finally {
+      const formattedData = data.map((item: any) => ({
+        id: item.date,
+        name: item.title,
+        description: item.explanation,
+        image: item.url
+      }));
+      setResults(formattedData);
+    } catch (error: any) {
+      console.error("Netzwerk/System Fehler:", error);
+      alert("Ein Fehler ist aufgetreten: " + error.message);
       setLoading(false);
     }
   };
