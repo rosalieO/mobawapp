@@ -17,6 +17,16 @@ export const Styles = StyleSheet.create({
         width: '100%',
         marginBottom: 20
     },
+    datecontainer: {
+        width: '40%',
+        marginBottom: 20
+    },
+    fromtocontainer: {
+        flexDirection: 'row', 
+        flexWrap: 'wrap',   
+        justifyContent: 'space-between', 
+        padding: 10,
+    },
     anomalycontainer: {
         width: '100%',
         maxheight: 200,
