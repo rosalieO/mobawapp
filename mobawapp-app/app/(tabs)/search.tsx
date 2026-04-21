@@ -16,9 +16,10 @@ export default function Search() {
     
     const start = fromDate.toISOString().split('T')[0];
     const end = toDate.toISOString().split('T')[0];
-    
-    const API_KEY = 'DEMO_KEY'; 
-    const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&start_date=${start}&end_date=${end}`;
+    const API_KEY = process.env.NASA_API_KEY;
+    const BASE_URL = process.env.NASA_BASE_URL;
+
+    const url = `${BASE_URL}?api_key=${API_KEY}&start_date=${start}&end_date=${end}`;
   
     try {
       const response = await fetch(url);
