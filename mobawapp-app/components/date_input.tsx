@@ -3,9 +3,14 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { Styles } from '../constants/styles'; 
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-export function DateInput() {
-    const [fromDate, setFromDate] = useState(new Date());
-    const [toDate, setToDate] = useState(new Date());
+interface DateInputProps {
+  fromDate: Date;
+  toDate: Date;
+  setFromDate: (d: Date) => void;
+  setToDate: (d: Date) => void;
+}
+
+export function DateInput({ fromDate, toDate, setFromDate, setToDate }: DateInputProps) {
     const [show, setShow] = useState<'from' | 'to' | null>(null);
 
     const onFromChange = (event: any, selectedDate?: Date) => {
