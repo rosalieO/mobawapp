@@ -1,7 +1,8 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { Styles } from '../../constants/styles';
 import { DateInput } from '../../components/date_input';
 import React, { useState } from 'react';
+import SearchList from '../../components/search_list';
 
 export default function Search() {
   const [fromDate, setFromDate] = useState(new Date())
@@ -51,9 +52,15 @@ export default function Search() {
       <TouchableOpacity 
         style={Styles.touchable} 
         onPress={handleSearch} 
+        disabled={loading}
       >
-        <Text style={Styles.touchabletext}>Search</Text>
+        {loading ? (
+          <ActivityIndicator color="white" />
+        ) : (
+          <Text style={Styles.touchabletext}>Search</Text>
+        )}
       </TouchableOpacity>
+      <SearchList data={results} />
     </View>
   );
 }
