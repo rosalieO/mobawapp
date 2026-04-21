@@ -3,7 +3,6 @@ import { ScrollView, Text } from 'react-native';
 import { Styles } from '../constants/styles';
 import { SearchCard } from './search_card';
 
-// Wir definieren, was ein Suchergebnis enthalten muss
 interface ApiResult {
   id: string;
   name: string;
