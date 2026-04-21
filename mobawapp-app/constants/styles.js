@@ -134,7 +134,7 @@ export const Styles = StyleSheet.create({
     },
     coverimage: {
         width: '100%',
-        height: 200,
+        height: 150,
         overflow: 'hidden'
     }
 });
