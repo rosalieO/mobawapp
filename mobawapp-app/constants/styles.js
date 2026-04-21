@@ -39,6 +39,19 @@ export const Styles = StyleSheet.create({
     textcontainer: {
         padding: 10,
     },
+    searchcontainer: {
+        flexDirection: 'row', 
+        flexWrap: 'wrap',   
+        justifyContent: 'space-between', 
+        padding: 10,
+        width: '100%',
+        maxheight: 200,
+        marginBottom: 20,
+        borderRadius: 8,
+        backgroundColor: '#333333',
+        borderWidth: 1,
+        borderColor: '#444444',
+    },
     touchable: {
         padding: 15,
         backgroundColor: 'pink',
@@ -135,6 +148,11 @@ export const Styles = StyleSheet.create({
     coverimage: {
         width: '100%',
         height: 150,
+        overflow: 'hidden'
+    },
+    searchimage: {
+        width: 100,
+        height: '100%',
         overflow: 'hidden'
     }
 });
