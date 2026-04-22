@@ -1,17 +1,10 @@
-// components/search_list.tsx
 import { ScrollView, Text } from 'react-native';
 import { Styles } from '../constants/styles';
 import { SearchCard } from './search_card';
-
-interface ApiResult {
-  id: string;
-  name: string;
-  description: string;
-  image: string | null;
-}
+import { Anomaly } from '../context/anomaly_context';
 
 interface SearchListProps {
-  data: ApiResult[]; 
+  data: Anomaly[]; 
 }
 
 export default function SearchList({ data }: SearchListProps) {
@@ -19,7 +12,7 @@ export default function SearchList({ data }: SearchListProps) {
     <ScrollView>
       {data.length === 0 ? (
         <Text style={Styles.fadedtext}>
-          Keine Ergebnisse. Wähle ein Datum und starte die Suche!
+          Choose a date range and start your search!
         </Text>
       ) : (
         data.map((item) => (

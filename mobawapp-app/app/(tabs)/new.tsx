@@ -34,7 +34,7 @@ export default function New() {
       setAnomalyDescription('');
       setAnomalyImage(null);
 
-      alert("Erfolgreich gespeichert!");
+      alert("saved successfully!");
     }
   };
 

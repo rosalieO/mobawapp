@@ -1,18 +1,14 @@
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Styles } from '../../../constants/styles';
 import { Stack } from 'expo-router';
-import { Anomaly } from '../../../context/anomaly_context';
 import { useAnomalies } from '../../../context/anomaly_context';
 import { useLocalSearchParams } from 'expo-router';
 
-interface SearchCardProps {
-    item: Anomaly
-}
-
-export default function SearchResultsDetailPage({ item }: SearchCardProps) {
+export default function SearchResultsDetailPage() {
   const { addAnomaly } = useAnomalies();
-
   const { id, name, description, image } = useLocalSearchParams();
+
+  if (!id) return <Text style={Styles.error}>Entry not found °~°</Text>;
 
   const handleSavePress = () => {
     const newEntry = {
@@ -24,18 +20,18 @@ export default function SearchResultsDetailPage({ item }: SearchCardProps) {
   
     addAnomaly(newEntry);
     
-    alert("Erfolgreich gespeichert!");
+    alert("saved succesfully!");
   };
 
-  const currentImage = item.image 
-      ? (typeof item.image === 'string' ? { uri: item.image } : item.image)
+  const currentImage = image 
+      ? (typeof image === 'string' ? { uri: image } : image)
       : require('../../../assets/anomaly-a.jpg');
 
-  if (!item) return <Text style={Styles.error}>Anomaly not found °~°</Text>;
+
   return (
     <View style={Styles.container}>
       <Stack.Screen options={{ headerShown: false }} />
-      <Text style={Styles.subheadline}>{item.id}</Text>
+      <Text style={Styles.subheadline}>{id}</Text>
       <ScrollView>
         {currentImage ? (
           <Image 
@@ -45,12 +41,12 @@ export default function SearchResultsDetailPage({ item }: SearchCardProps) {
           />
         ) : (
           <View style={[Styles.image, { backgroundColor: '#333', justifyContent: 'center', alignItems: 'center' }]}>
-            <Text style={{ color: 'white' }}>Kein Bild vorhanden</Text>
+            <Text style={{ color: 'white' }}>no image available</Text>
           </View>
         )}
-        <Text style={Styles.headline}>{item.name}</Text>
+        <Text style={Styles.headline}>{name}</Text>
         <Text style={Styles.text}>
-          {item.description}
+          {description}
         </Text>
       </ScrollView>
       <TouchableOpacity 

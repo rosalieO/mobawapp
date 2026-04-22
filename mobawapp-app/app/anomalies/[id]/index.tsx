@@ -31,7 +31,7 @@ export default function AnomalyDetailPage() {
         />
       ) : (
         <View style={[Styles.image, { backgroundColor: '#333', justifyContent: 'center', alignItems: 'center' }]}>
-          <Text style={{ color: 'white' }}>Kein Bild vorhanden</Text>
+          <Text style={{ color: 'white' }}>no image available</Text>
         </View>
       )}
       <Text style={Styles.headline}>{anomaly.name}</Text>

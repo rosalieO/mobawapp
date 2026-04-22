@@ -12,7 +12,19 @@ export function SearchCard({ item }: SearchCardProps) {
       ? (typeof item.image === 'string' ? { uri: item.image } : item.image)
       : require('../assets/anomaly-a.jpg');
     return (
-      <Link key={item.id} href={`/search_results/${item.id}`} asChild>
+      <Link 
+        key={item.id} 
+        href={{
+          pathname: `/search_results/${item.id}`,
+          params: {
+            id: item.id,
+            name: item.name,
+            description: item.description,
+            image: item.image
+          }
+        }} 
+        asChild
+      >
         <TouchableOpacity style={Styles.searchcontainer}>
           <Image
             source={currentImage}
