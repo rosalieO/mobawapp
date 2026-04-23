@@ -3,10 +3,12 @@ import { Styles } from '../../../constants/styles';
 import { Stack } from 'expo-router';
 import { useAnomalies } from '../../../context/anomaly_context';
 import { useLocalSearchParams } from 'expo-router';
+import { CardHeader } from '../../../components/card_header'
 
 export default function SearchResultsDetailPage() {
   const { addAnomaly } = useAnomalies();
   const { id, name, description, image } = useLocalSearchParams();
+  const idString = id as string;
 
   if (!id) return <Text style={Styles.error}>Entry not found °~°</Text>;
 
@@ -31,7 +33,7 @@ export default function SearchResultsDetailPage() {
   return (
     <View style={Styles.container}>
       <Stack.Screen options={{ headerShown: false }} />
-      <Text style={Styles.subheadline}>{id}</Text>
+      <CardHeader id={idString} />
       <ScrollView>
         {currentImage ? (
           <Image 

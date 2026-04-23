@@ -41,7 +41,7 @@ export default function Search() {
         id: item.date,
         name: item.title,
         description: item.explanation,
-        image: item.url
+        image: item.url,
       }));
       setResults(formattedData);
     } else {
@@ -49,7 +49,7 @@ export default function Search() {
         id: data.date,
         name: data.title,
         description: data.explanation,
-        image: data.url
+        image: data.url,
       }]);
     }
 

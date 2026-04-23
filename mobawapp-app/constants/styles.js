@@ -19,7 +19,7 @@ export const Styles = StyleSheet.create({
     },
     datecontainer: {
         width: '40%',
-        marginBottom: 20
+        marginBottom: 10
     },
     fromtocontainer: {
         flexDirection: 'row', 
@@ -54,6 +54,17 @@ export const Styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#444444',
         overflow: 'hidden',
+    },
+    headercontainer: {
+        flexDirection: 'row',
+        width: '100%',
+        height: 50,
+        marginBottom: 20,
+        backgroundColor: '#333333',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 20,
+        borderRadius: 8,
     },
     touchable: {
         padding: 15,
@@ -141,6 +152,14 @@ export const Styles = StyleSheet.create({
         color: '#cacaca',
         fontWeight: 800,
         textAlign: 'center'
+    },
+    exitbutton: {
+        height: 35,
+        width: 35,
+        backgroundColor: 'black',
+        borderRadius: 8,
+        alignItems: 'center',
+        paddingTop: 5,
     },
     datetext: {
         fontSize: 12,
