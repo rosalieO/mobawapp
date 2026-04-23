@@ -82,6 +82,21 @@ export const Styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#444444',
     },
+    exitbutton: {
+        height: 35,
+        width: 35,
+        backgroundColor: 'black',
+        borderRadius: 8,
+        alignItems: 'center',
+        paddingTop: 5,
+    },
+    sharebutton: {
+        height: 50,
+        width: 50,
+        borderRadius: 8,
+        backgroundColor: 'pink',
+        alignItems: 'center',
+    },
     headline: {
         fontSize: 24,
         fontFamily: 'System',
@@ -152,14 +167,6 @@ export const Styles = StyleSheet.create({
         color: '#cacaca',
         fontWeight: 800,
         textAlign: 'center'
-    },
-    exitbutton: {
-        height: 35,
-        width: 35,
-        backgroundColor: 'black',
-        borderRadius: 8,
-        alignItems: 'center',
-        paddingTop: 5,
     },
     datetext: {
         fontSize: 12,
