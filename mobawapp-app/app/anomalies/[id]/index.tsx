@@ -2,11 +2,13 @@ import { View, Text, Image } from 'react-native';
 import { Styles } from '../../../constants/styles';
 import { useAnomalies } from '../../../context/anomaly_context';
 import { useLocalSearchParams, Stack } from 'expo-router';
+import { CardHeader } from '../../../components/card_header';
 
 export default function AnomalyDetailPage() {
   const { id } = useLocalSearchParams();
   const { getAnomalyById } = useAnomalies();
   const anomaly = getAnomalyById(id as string);
+  const idString = id as string;
 
   if (anomaly === undefined || anomaly === null) {
     return (
@@ -23,6 +25,7 @@ export default function AnomalyDetailPage() {
   return (
     <View style={Styles.container}>
       <Stack.Screen options={{ headerShown: false }} />
+      <CardHeader id={idString} />
       {imageSource ? (
         <Image 
           source={imageSource} 

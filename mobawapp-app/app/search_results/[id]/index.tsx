@@ -3,7 +3,7 @@ import { Styles } from '../../../constants/styles';
 import { Stack } from 'expo-router';
 import { useAnomalies } from '../../../context/anomaly_context';
 import { useLocalSearchParams } from 'expo-router';
-import { CardHeader } from '../../../components/card_header'
+import { CardHeader } from '../../../components/card_header';
 
 export default function SearchResultsDetailPage() {
   const { addAnomaly } = useAnomalies();
