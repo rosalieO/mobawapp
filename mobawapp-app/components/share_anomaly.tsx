@@ -1,4 +1,4 @@
-import { TouchableOpacity, Share, Alert } from 'react-native';
+import { View, TouchableOpacity, Share, Alert } from 'react-native';
 import { Styles } from '../constants/styles';
 import { Anomaly } from '../context/anomaly_context';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -28,11 +28,13 @@ export function ShareAnomaly({item}: ShareAnomalyProps) {
     };
     
     return (
-        <TouchableOpacity 
-              style={Styles.sharebutton}
-              onPress={onShare}
-            >
-              <MaterialIcons size={25} name="close" color='#cacaca' />
-        </TouchableOpacity> 
+        <View style={Styles.bottomrightcontainer}>
+          <TouchableOpacity 
+                style={Styles.sharebutton}
+                onPress={onShare}
+              >
+                <MaterialIcons size={30} name="share" color='black' />
+          </TouchableOpacity> 
+        </View>
     )
 }

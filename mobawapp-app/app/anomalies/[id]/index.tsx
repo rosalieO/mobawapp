@@ -3,6 +3,7 @@ import { Styles } from '../../../constants/styles';
 import { useAnomalies } from '../../../context/anomaly_context';
 import { useLocalSearchParams, Stack } from 'expo-router';
 import { CardHeader } from '../../../components/card_header';
+import { ShareAnomaly } from '../../../components/share_anomaly';
 
 export default function AnomalyDetailPage() {
   const { id } = useLocalSearchParams();
@@ -41,6 +42,7 @@ export default function AnomalyDetailPage() {
       <Text style={Styles.text}>
         {anomaly.description}
       </Text>
+      <ShareAnomaly item={anomaly} />
     </View>
   );
 }

@@ -66,6 +66,12 @@ export const Styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderRadius: 8,
     },
+    bottomrightcontainer: {
+      position: 'absolute',
+      bottom: 60,          
+      right: 40,           
+      zIndex: 10,           
+    },
     touchable: {
         padding: 15,
         backgroundColor: 'pink',
@@ -96,6 +102,7 @@ export const Styles = StyleSheet.create({
         borderRadius: 8,
         backgroundColor: 'pink',
         alignItems: 'center',
+        paddingTop: 10,
     },
     headline: {
         fontSize: 24,
